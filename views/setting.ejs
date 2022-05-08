@@ -1,0 +1,29 @@
+<%- include('includes/head') %>
+    <%- include("includes/sidebar") %>
+        <%- include("includes/img") %>
+            <div id="topPusher">
+                <form action="/setting" method="post" class="form-control form-custom">
+                    <h2 class="mb-5 text-center">Enter Employee Details</h2>
+                    <h5 class="text-center">Settings</h5>
+                    <input type="text" name="idnum" id="idnum" value="Employee ID : <%= data.id %>" disabled="true"
+                        placeholder="Employee ID">
+                    <input type="hidden" name="rowid" value="<%= data.rowid %>">
+                    <p class="text-center">Change Name</p>
+                    <div>
+                        <input type="text" value="<%= data.fn %>" name="fname" id="employeeName"
+                            placeholder="First Name" required>
+                        <input type="text" value="<%= data.ln %>" name="lname" id="employeeName" placeholder="Last Name"
+                            required>
+                    </div>
+                    <p class="text-center">Change Password</p>
+                    <div>
+                        <input type="password" value="" name="ps1" placeholder="New Password">
+                        <input type="password" value="" name="ps2" placeholder="Retype Password">
+                    </div>
+                    <p class="text-center" style="color:<%= color %>;">
+                        <%= err %>
+                    </p>
+                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                </form>
+            </div>
+            <%- include('includes/foot') %>
